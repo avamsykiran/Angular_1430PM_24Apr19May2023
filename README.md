@@ -103,3 +103,23 @@ What is Angular?
         undefined
         any
 
+Angular CLI
+
+    is a frontier or shell to manage our angular application.
+
+    ng version
+
+    ng new app-name
+
+    ng serve                        compile, build and deploy the app on a development server at 4200 port
+    ng serve -o                     compile, build and deploy the app on a development server at 4200 port and opens the 
+                                    browser pointing the app.
+    ng serve --port 8888 -o         compile, build and deploy the app on a development server at 8888 port and opens the 
+                                    browser pointing the app.
+
+    ng build                        compile, build and store the built files in 'dist'.
+    ng test                         compile, build and run all test cases
+
+
+
+
