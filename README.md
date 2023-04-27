@@ -217,7 +217,7 @@ Angular Archetecture
 
                     Two-Way Data Binding
 
-                        is used to handling input from the user. two data bidnign work with form elements only.
+                        is used to handling input from the user. two data binding works with form elements only.
 
                         An attribute directive called 'ngModel' from 'FormsModule' is used for two-way data binding.
                         'FormsModule' is from '@angular/forms'.
@@ -226,17 +226,38 @@ Angular Archetecture
 
                     One-Way Data Binding
                         Attribute Binding
+
+                            <tagName [attribute]="angularExpression"> content </tagName>
+
                         Event Binding
+
+                            <tagName (eventAttributeDirective)="method($event)"> content </tagName>
+
+                            eventAttributeDirective
+                                    click   dblClick    mouseover   mouseup mouseleave
+                                    keydown keyup   blur    change  focus ngSubmit ....etc.,
+
                         Style Binding
+
+                            <tagName [style.cssProperty]="field"> content </tagName>
+
                         Css Class Binding
 
+                            <tagName [class.className]="booleanExpression"> content </tagName>
 
         Directive
 
-            @Directive({
+            an attribute defined in angular.
 
+            @Directive({
+                selector:''
             })
             class HighlighterDirective {}
+
+            structural directives
+
+                *ngIf
+                *ngFor
 
         Pipe
 

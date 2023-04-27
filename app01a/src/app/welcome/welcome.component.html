@@ -1,9 +1,28 @@
 <section class="welcome">
     <p> Welcome {{userName}}! to our brand new angular SPA.</p>
 
+    <div>
+        <img [src]="logos[logoIndex]" 
+            (click)="changeIndex()" 
+            [style.width.px]="logoWidth"
+            [class.centered]="isCentered"
+            [class.bordered]="isBordered"/>
+    </div>
+
     <form>
         <label> User Name: 
             <input type="text" name="unm" [(ngModel)]="userName" />
+        </label>
+        <label>
+            Image Width:
+            <input type="range" min="50" max="500" name="imgW" [(ngModel)]="logoWidth" />
+            <strong> {{logoWidth}} px </strong>
+        </label>
+        <label>
+            <input type="checkbox" name="c1" [(ngModel)]="isBordered" /> Bordered
+        </label>
+        <label>
+            <input type="checkbox" name="c2" [(ngModel)]="isCentered" /> Centered
         </label>
     </form>
 </section>
