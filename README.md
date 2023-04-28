@@ -261,16 +261,51 @@ Angular Archetecture
 
         Pipe
 
-            @Pipe({
+            is a tool used to transform data just before rendering.
 
+            lowercase
+            uppercase
+            titlecase
+            number
+            currency
+            date
+            async
+            json
+            
+            @Pipe({
+                name:''
             })
-            class ConvertUnitPipe {}
+            class ConvertUnitPipe implements Transformer {
+                transform(value:any) :any {
+                    return transformedData;
+                }
+            }
 
         Service 
 
             @Injectable({
-
+                providedIn:'root'
             })
             class EmployeeService {}
+
+Bootstrap integration in Angular
+
+    npm install bootstrap --save
+
+    node_modules/bootstrap/dist/css/bootstrap.min.css
+    node_modules/bootstrap/dist/js/bootstrap.min.js
+
+    we have include these paths in the 'styles' and 'scripts' sections of angular.json
+
+Data Modeling in angular
+
+    we use typescript interfaces to model data in angular.
+
+    typescript interfaces can have fields/properties.
+
+    json format is used to create object of interface type.
+
+    if a json object has all the fields declared in an interface than that json
+    object is said to be an object that interface.
 
 
