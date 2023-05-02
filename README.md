@@ -308,4 +308,15 @@ Data Modeling in angular
     if a json object has all the fields declared in an interface than that json
     object is said to be an object that interface.
 
+Inter-Component Communication / Parent-Child communication
+
+    A parent can use an attribute to share data with a child component.
+    But the child component must have an attribute declared.
+
+        to define an attribute for any component, the field(s) of that
+        component is marked with @Input() decorator.
+
+    A parent can handle events of a child component if the child component has any
+    custom events. A custome event can be declared and raised from with in a component
+    using EventEmitter objects and @Output decorator.
 

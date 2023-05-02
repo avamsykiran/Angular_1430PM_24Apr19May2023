@@ -3,16 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { WelcomeComponent } from './welcome/welcome.component';
-import { FriendsComponent } from './friends/friends.component';
-import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
+import { DeptsComponent } from './depts/depts.component';
+import { DeptRowComponent } from './dept-row/dept-row.component';
+import { DeptFormRowComponent } from './dept-form-row/dept-form-row.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WelcomeComponent,
-    FriendsComponent,
-    PipesDemoComponent
+    DeptsComponent,
+    DeptRowComponent,
+    DeptFormRowComponent
   ],
   imports: [
     BrowserModule,

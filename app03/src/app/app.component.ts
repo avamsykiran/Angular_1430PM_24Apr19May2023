@@ -9,6 +9,6 @@ export class AppComponent {
   title:string;
 
   constructor(){
-    this.title = "My First Angular App";
+    this.title="HR POCKETS";
   }
 }
