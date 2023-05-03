@@ -14,8 +14,16 @@ export class DeptRowComponent {
   @Output()
   delBtnClickEvent : EventEmitter<number>;
 
+  @Output()
+  editBtnClickEvent : EventEmitter<number>;
+
   constructor(){
+    this.editBtnClickEvent=new EventEmitter<number>();
     this.delBtnClickEvent=new EventEmitter<number>();
+  }
+
+  handleEditBtn(){
+    this.editBtnClickEvent.emit(this.dept.id);
   }
 
   handleDelBtn(){

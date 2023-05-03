@@ -7,6 +7,7 @@ import { Dept } from '../models/dept';
 export class DeptService {
 
   depts:Dept[];
+  nextDeptId:number;
 
   constructor() {
     this.depts = [
@@ -14,6 +15,8 @@ export class DeptService {
       {id:2,title:"OPERATIONS",hq:"VIZAG,INDIA"},
       {id:3,title:"SALES",hq:"LOS ANGELS,USA"}
     ];
+
+    this.nextDeptId = 4;
   }
 
   getAll():Dept[]{
@@ -25,6 +28,7 @@ export class DeptService {
   }
 
   add(dept:Dept):void{
+    dept.id=this.nextDeptId++;
     this.depts.push(dept);
   }
 

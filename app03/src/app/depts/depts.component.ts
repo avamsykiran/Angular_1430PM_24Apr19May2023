@@ -24,4 +24,24 @@ export class DeptsComponent {
     this.deptService.deleteById(id);
     this.depts=this.deptService.getAll();
   }
+
+  markEditable(id:number){
+    let index = this.depts.findIndex(d => d.id===id);
+    if(index>-1){
+      this.depts[index].isEditable=true;
+    }
+  }
+  
+  unmarkEditable(id:number){
+    let index = this.depts.findIndex(d => d.id===id);
+    if(index>-1){
+      this.depts[index].isEditable=undefined;
+    }
+  }
+
+  updateDept(dept:Dept){
+    dept.isEditable=undefined;
+    this.deptService.update(dept);
+    this.depts=this.deptService.getAll();
+  }
 }

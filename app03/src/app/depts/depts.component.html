@@ -19,7 +19,19 @@
     </div>  
 
     <ng-container *ngIf="depts && depts.length>0">
-        <app-dept-row *ngFor="let d of depts" [dept]="d" (delBtnClickEvent)="delDept($event)" ></app-dept-row>
+        <ng-container *ngFor="let d of depts">
+            <app-dept-row 
+                *ngIf="!d.isEditable" 
+                [dept]="d" 
+                (delBtnClickEvent)="delDept($event)" 
+                (editBtnClickEvent)="markEditable($event)"></app-dept-row>
+
+            <app-dept-form-row 
+                *ngIf="d.isEditable" 
+                [dept]="d"
+                (formSubmitedEvent)="updateDept($event)"
+                (formResetEvent)="unmarkEditable($event)" ></app-dept-form-row>
+        </ng-container>
     </ng-container>
     
 </section>

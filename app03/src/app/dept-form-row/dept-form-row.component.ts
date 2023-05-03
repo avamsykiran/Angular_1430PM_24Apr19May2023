@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Dept } from '../models/dept';
 
 @Component({
@@ -8,14 +8,19 @@ import { Dept } from '../models/dept';
 })
 export class DeptFormRowComponent {
 
+  @Input()
   dept:Dept;
 
   @Output()
   formSubmitedEvent:EventEmitter<Dept>;
 
+  @Output()
+  formResetEvent:EventEmitter<number>;
+
   constructor(){
     this.dept = {id:0,title:'',hq:''};
     this.formSubmitedEvent=new EventEmitter<Dept>();
+    this.formResetEvent=new EventEmitter<number>();
   }
 
   handleSubmit(){
@@ -24,6 +29,10 @@ export class DeptFormRowComponent {
   }
 
   resetForm(){
-    this.dept = {id:0,title:'',hq:''};
+    if(this.dept.isEditable){
+      this.formResetEvent.emit(this.dept.id);
+    }else{
+      this.dept = {id:0,title:'',hq:''};
+    }
   }
 }
