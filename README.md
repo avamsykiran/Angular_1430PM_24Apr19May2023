@@ -320,3 +320,35 @@ Inter-Component Communication / Parent-Child communication
     custom events. A custome event can be declared and raised from with in a component
     using EventEmitter objects and @Output decorator.
 
+Angular Routing
+
+    Routing allows us to display one component at a time baed on a url.
+
+    RouterModule from '@angular/router'
+
+        Route               class       path:''
+                                        component:
+                                        pathMatch:'startsWith|full'
+                                        redirect:''
+                                        children:[]
+                                        canActive:[]
+                                        canDeactive:[]
+                                        canLoad:[]
+
+        Routes              Route[]
+
+        router-outlet       component   reserve place on the top-level component,
+                                        and that place is replaced with the componenet matching the path
+        
+        routerLink          directive   used on a 'a' tag instead of its 'href'
+        routerLinkActive    directive   it takes a css-class and applies to the 'a' tag, 
+                                        when it is active
+
+        Router              service     offers two methods to navigate programatically
+                                        navigate([])
+                                        navigateByUrl("")
+
+        ActivatedRouter     service     used to extract information like url-apth, path variables,
+                                        query string ..etc., from the current URL.
+
+
