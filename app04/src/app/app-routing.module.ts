@@ -7,7 +7,8 @@ import { DeptFormComponent } from './dept-form/dept-form.component';
 const routes: Routes = [
   {path:'',pathMatch:'full',redirectTo:'/depts'},
   {path:'depts',component:DeptsComponent},
-  {path:'addDept',component:DeptFormComponent}
+  {path:'addDept',component:DeptFormComponent},
+  {path:'editDept/:deptId',component:DeptFormComponent}
 ];
 
 @NgModule({

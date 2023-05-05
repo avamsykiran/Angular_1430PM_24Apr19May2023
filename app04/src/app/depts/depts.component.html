@@ -19,7 +19,8 @@
                 <td class="text-end">{{d.id}}</td>
                 <td>{{d.title}}</td>
                 <td>{{d.hq}}</td>
-                <td>
+                <td class="text-center">
+                    <a class="btn btn-1s btn-info me-1" [routerLink]="['/editDept',d.id]">EDIT</a>
                     <button class="btn btn-sm btn-danger" (click)="delDept(d.id)">DELETE</button>
                 </td>
             </tr>

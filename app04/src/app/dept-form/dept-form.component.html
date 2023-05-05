@@ -2,21 +2,27 @@
 <section class="col-sm-4 mx-auto p-2">
     <h5>Department Details</h5>
 
-    <form (ngSubmit)="handleFormSubmit()">
+    <form (ngSubmit)="handleFormSubmit()" *ngIf="dept" #deptForm="ngForm">
         <div>
             <label>Department Id</label>
             <input type="number" name="tb1" [(ngModel)]="dept.id" class="form-control" readonly />
         </div>
         <div>
             <label>Title</label>
-            <input type="text" name="tb2" [(ngModel)]="dept.title" class="form-control"/>
+            <input type="text" name="tb2" [(ngModel)]="dept.title" class="form-control" required #title="ngModel"/>
+            <div class="alert alert-danger p-2" *ngIf="title.invalid && (title.touched || title.dirty)">
+                <span *ngIf="title.errors!['required']">Department Title is a mandatory field</span>
+            </div>
         </div>
         <div>
             <label>Head Quarter</label>
-            <input type="text" name="tb3" [(ngModel)]="dept.hq" class="form-control"/>
+            <input type="text" name="tb3" [(ngModel)]="dept.hq" class="form-control" required #hq="ngModel" />
+            <div class="alert alert-danger p-2" *ngIf="hq.invalid && (hq.touched || hq.dirty)">
+                <span *ngIf="hq.errors!['required']">Department Head Quarters is a mandatory field</span>
+            </div>
         </div>
         <div class="d-grid mt-2">
-            <button class="btn btn-primary">SAVE</button>
+            <button class="btn btn-primary" [disabled]="deptForm.invalid">SAVE</button>
         </div>
     </form>
 </section>

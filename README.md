@@ -352,3 +352,37 @@ Angular Routing
                                         query string ..etc., from the current URL.
 
 
+Angular Forms
+
+    Template Driven Form     
+
+        uses html5 validation attributes for specifing validations
+            like required, pattern, min, max, type="email" ...etc.,
+
+        @angular/forms  
+            FormsModule
+
+                    ngForm
+                            #refVare="ngForm"
+
+                                invalid
+                                valid
+
+                    ngModel
+                            #refVar="ngModel"
+
+                                invalid     valid
+                                dirty       prestine
+                                touched     untouched
+
+                                errors['validatorName']
+    
+    Model Driven Form / Reactive Forms
+
+        
+        @angular/forms  
+            ReactiveFormsModule
+
+                FormGroup
+                FormControl
+                FormBuilder
