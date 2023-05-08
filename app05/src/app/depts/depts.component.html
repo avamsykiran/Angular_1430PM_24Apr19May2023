@@ -1,0 +1,29 @@
+<section class="col-sm-8 mx-auto p-2">
+    <h5>List Of Departments</h5>
+
+    <p class="alert alert-danger p-2 fw-bold" *ngIf="!depts || depts.length===0">
+        No Records To Display.
+    </p>
+
+    <table class="table talbe-bordered table-striped" *ngIf="depts && depts.length>0">
+        <thead>
+            <tr class="text-center">
+                <th>Dept#</th>
+                <th>Title</th>
+                <th>HeadQuarters</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let d of depts">
+                <td class="text-end">{{d.id}}</td>
+                <td>{{d.title}}</td>
+                <td>{{d.hq}}</td>
+                <td class="text-center">
+                    <a class="btn btn-1s btn-info me-1" [routerLink]="['/editDept',d.id]">EDIT</a>
+                    <button class="btn btn-sm btn-danger" (click)="delDept(d.id)">DELETE</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>

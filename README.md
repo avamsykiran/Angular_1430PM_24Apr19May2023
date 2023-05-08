@@ -378,7 +378,6 @@ Angular Forms
                                 errors['validatorName']
     
     Model Driven Form / Reactive Forms
-
         
         @angular/forms  
             ReactiveFormsModule
@@ -386,3 +385,16 @@ Angular Forms
                 FormGroup
                 FormControl
                 FormBuilder
+
+    Develop an angular app to perform listing, adding , deleting and editing of records of type:
+
+    interface Parcel {
+        id:number;
+        parcelFrom:string;
+        parcelTo:string;
+        weight:number;
+        charge:number;
+        status:string;      //BOOKED/CANCELLED/DELIVERED/RETURNED/TRANSIT
+    }
+
+    using reactive forms.

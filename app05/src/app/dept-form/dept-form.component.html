@@ -1,0 +1,30 @@
+
+<section class="col-sm-4 mx-auto p-2">
+    <h5>Department Details</h5>
+
+    <form (ngSubmit)="handleFormSubmit()"  [formGroup]="deptForm">
+        <div>
+            <label>Department Id</label>
+            <input type="number" formControlName="id" class="form-control" readonly />
+        </div>
+        <div>
+            <label>Title</label>
+            <input type="text" formControlName="title" class="form-control" />
+            <div class="alert alert-danger p-2" *ngIf="titleFC.invalid && (titleFC.touched || titleFC.dirty)">
+                <span *ngIf="titleFC.errors!['required']">Department Title is a mandatory field</span>
+                <span *ngIf="titleFC.errors!['minlength']">Department Title is must be of atleast 2 characters</span>
+                <span *ngIf="titleFC.errors!['maxlength']">Department Title is must be atmax 10 characters</span>
+            </div>
+        </div>
+        <div>
+            <label>Head Quarter</label>
+            <input type="text" formControlName="hq" class="form-control" />
+            <div class="alert alert-danger p-2" *ngIf="hqFC.invalid && (hqFC.touched || hqFC.dirty)">
+                <span *ngIf="hqFC.errors!['required']">Department Head Quarters is a mandatory field</span>
+            </div>
+        </div>
+        <div class="d-grid mt-2">
+            <button class="btn btn-primary" [disabled]="deptForm.invalid">SAVE</button>
+        </div>
+    </form>
+</section>
