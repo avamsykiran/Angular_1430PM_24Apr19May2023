@@ -1,0 +1,23 @@
+<form (ngSubmit)="startSeries()" class="m-3">
+    <div>
+        <label>Lower Bound</label>
+        <input type="number" name="tb1" [(ngModel)]="lb" class="form-control" />
+    </div>
+    <div>
+        <label>Upper Bound</label>
+        <input type="number" name="tb1" [(ngModel)]="ub" class="form-control" />
+    </div>
+    <div class="d-grid mt-2">
+        <button class="btn btn-primary" [disabled]="inProgress">START SERIES</button>
+    </div>
+</form>
+
+<div class="alert alert-info p-2 m-3 fw-bold" *ngIf="series && series.length!=0">
+    <span *ngFor="let n of series">{{n}} </span>
+</div>
+
+<div class="alert alert-danger p-2 m-3 fw-bold" *ngIf="errMsg">
+    {{errMsg}}
+</div>
+
+

@@ -388,13 +388,45 @@ Angular Forms
 
     Develop an angular app to perform listing, adding , deleting and editing of records of type:
 
-    interface Parcel {
-        id:number;
-        parcelFrom:string;
-        parcelTo:string;
-        weight:number;
-        charge:number;
-        status:string;      //BOOKED/CANCELLED/DELIVERED/RETURNED/TRANSIT
-    }
+        interface Parcel {
+            id:number;
+            parcelFrom:string;
+            parcelTo:string;
+            weight:number;
+            charge:number;
+            status:string;      //BOOKED/CANCELLED/DELIVERED/RETURNED/TRANSIT
+        }
 
-    using reactive forms.
+        using reactive forms.
+
+    RxJS
+    
+        Reactive Javascript.
+
+        Promise
+
+            const job = (resolve,reject) => {
+                //program our asynchronous operation
+            }
+
+            let p1 = new Promise(job);
+
+            p1.then(sucessCallBack).catch(failureCallBack);
+
+        Observable
+
+            const job = (observer) => {
+
+                //program our asynchronous operation
+                // observer.next(val)  is used to pass intermidiate values while the job is still in progress
+                // observer.error(err) is used to pass an error
+                // observer.complete() is used to indicate that he job is completed.
+            }
+
+            let ob = new Observer(job);
+
+            observer.subscribe({
+                next: callBack1,
+                error: callBack2,
+                complete: callBack3
+            });
