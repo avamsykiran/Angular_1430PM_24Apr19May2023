@@ -430,3 +430,21 @@ Angular Forms
                 error: callBack2,
                 complete: callBack3
             });
+
+    Angular Component Life Cycle Methods / Hooks
+    
+        constructor()
+
+        ngOnChanges()
+        ngOnInit()          //once and only in the life cycle of a component
+        ngDoCheck()
+
+                ngAfterContentInit()
+                ngAfterContentChecked()
+                ngAfterViuewInit()
+                ngAfterViewChecked()
+
+        ngOnDestroy()
+
+        
+
