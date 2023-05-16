@@ -446,5 +446,65 @@ Angular Forms
 
         ngOnDestroy()
 
-        
+    Rest API
+
+        is a http standard web service that can be used to exchange data across
+        an application server and a UI.
+
+        Each resource is given one single end point
+
+        for example, we can use '/emps' as end point for Employee records.
+
+        Because we need to send different request to execute various operations lke
+        retrival, insertion, updation, deletion to the same end-point, we will use
+        HTTP METHODS to distinguish between teh operations.
+
+                                                                                                HTTP STATUS
+        Operation    Http Method     url                Meaning                             SUCCESS     FAILURE
+        ----------------------------------------------------------------------------------------------------
+        Retrive         GET         /emps               get all employees                   OK-200      400 / 500
+                                    /emps/1             get employee having id 1            OK-200      404 / 500
+                                    /emps?name=vamsy    get employee having name 'vamsy'    OK-200      404 / 500
+
+        Insert          POST        /emps               insert emp carred in req body       201-CREATED 400 / 500
+        UPDATE          PUT         /emps/1             update emp carred in req body       204-ACCEPTED
+        DELETE          DELETE      /emps/1             delete employee having id 1         203-NO CONTENT
+
+
+    json-server
+
+        is a javascript based fake rest api creator. this is designed to help UI developer
+        learn rest api integration. This uses a .json file for records and generates fake 
+        rest-api for those records. This is only for learning purpose and does not offer
+        any scalabilit, reliabilit, performence ..etc.,
+
+        md rest-api
+        cd rest-api
+            npm init -y
+            npm i json-server --save
+            edit package.json to include "start":"json-server --port 8888 --watch ./data.json"
+            create a data.json file with a few hypothetical records.
+
+    HttpClient
+
+        HttpClient is a service from HttpClientModule from '@angular/common/http'
+
+        HttpClient
+            .get(url) : Observable
+            .put(url,reqBody) : Observable
+            .post(url,reqBody) : Observable
+            .delete(url) : Observable
+
+    Assignment
+
+        Develop an angular app supported by a json-server rest api that performs CRUD operations
+        on Consumer Records, where a consumer has the following fields:
+            id:number
+            fullName:string
+            membershipFee:number;
+            memberShipType:string       ("DAIMOND"/"GOLD"/"SILVER")        
+
+
+
+    
 

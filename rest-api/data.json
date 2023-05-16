@@ -1,0 +1,30 @@
+{
+  "depts": [
+    {
+      "id": 1,
+      "title": "Accounts",
+      "hq": "Mumbai, India"
+    },
+    {
+      "id": 2,
+      "title": "HR",
+      "hq": "Hyderabad, India"
+    }
+  ],
+  "emps":[
+    {
+      "id":1,
+      "fullName":"Vamsy Kiran Aripaka",
+      "designation":"Sr.Associate",
+      "dateOfJoining":"2023-01-01",
+      "deptId":1
+    },
+    {
+      "id":2,
+      "fullName":"Rahul Dravid",
+      "designation":"Jr.Associate",
+      "dateOfJoining":"2023-01-02",
+      "deptId":1
+    }
+  ]
+}
