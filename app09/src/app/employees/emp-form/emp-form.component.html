@@ -1,0 +1,43 @@
+<section class="border border-top-0 p-4">
+    <section class="col-sm-4 mx-auto p-2">
+        <h5>Employee Details</h5>
+
+        <p class="alert alert-danger p-4 fw-bold" *ngIf="errMsg">
+            {{errMsg}}
+        </p>
+
+        <form (ngSubmit)="handleFormSubmit()" [formGroup]="empForm">
+            <div>
+                <label>Employee Id</label>
+                <input type="number" formControlName="id" class="form-control" readonly />
+            </div>
+            <div>
+                <label>Title</label>
+                <input type="text" formControlName="fullName" class="form-control" />
+                <div class="alert alert-danger p-2" *ngIf="fullNameFC.invalid && (fullNameFC.touched || fullNameFC.dirty)">
+                    <span *ngIf="fullNameFC.errors!['required']">Full Name is a mandatory field</span>
+                    <span *ngIf="fullNameFC.errors!['minlength']">Full Name is must be of atleast 5
+                        characters</span>
+                    <span *ngIf="fullNameFC.errors!['maxlength']">Full Name is must be atmax 40 characters</span>
+                </div>
+            </div>
+            <div>
+                <label>Designation</label>
+                <input type="text" formControlName="designation" class="form-control" />
+                <div class="alert alert-danger p-2" *ngIf="designationFC.invalid && (designationFC.touched || designationFC.dirty)">
+                    <span *ngIf="designationFC.errors!['required']">Designation is a mandatory field</span>
+                </div>
+            </div>
+            <div>
+                <label>Join Date</label>
+                <input type="date" formControlName="dateOfJoining" class="form-control" />
+                <div class="alert alert-danger p-2" *ngIf="dateOfJoiningFC.invalid && (dateOfJoiningFC.touched || dateOfJoiningFC.dirty)">
+                    <span *ngIf="dateOfJoiningFC.errors!['required']">Join Date is a mandatory field</span>
+                </div>
+            </div>
+            <div class="d-grid mt-2">
+                <button class="btn btn-primary" [disabled]="empForm.invalid">SAVE</button>
+            </div>
+        </form>
+    </section>
+</section>

@@ -1,0 +1,38 @@
+<section class="border border-top-0">
+
+    <p class="alert alert-info p-4 fw-bold" *ngIf="!emps && !errMsg">
+        Please wait while laoding data....
+    </p>
+
+    <p class="alert alert-danger p-4 fw-bold" *ngIf="errMsg">
+        {{errMsg}}
+    </p>
+
+    <p class="alert alert-info p-4 fw-bold" *ngIf="emps && emps.length===0">
+        No Records To Display.
+    </p>
+
+    <table class="table table-bordered table-striped" *ngIf="emps && emps.length>0">
+        <thead>
+            <tr class="text-center">
+                <th>Emp#</th>
+                <th>Full Name</th>
+                <th>Designation</th>
+                <th>Join Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let e of emps">
+                <td class="text-end">{{e.id}}</td>
+                <td>{{e.fullName}}</td>
+                <td>{{e.designation}}</td>
+                <td>{{e.dateOfJoining|date:'dd-MMM-yyyy'}}</td>
+                <td class="text-center">
+                    <a class="btn btn-sm btn-info me-1" [routerLink]="['/emps',e.deptId,'edit',e.id]">EDIT</a>
+                    <button class="btn btn-sm btn-danger me-1" (click)="delEmp(e.id)">DELETE</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>

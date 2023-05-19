@@ -13,7 +13,7 @@
         No Records To Display.
     </p>
 
-    <table class="table talbe-bordered table-striped" *ngIf="depts && depts.length>0">
+    <table class="table table-bordered table-striped" *ngIf="depts && depts.length>0">
         <thead>
             <tr class="text-center">
                 <th>Dept#</th>
@@ -28,8 +28,9 @@
                 <td>{{d.title}}</td>
                 <td>{{d.hq}}</td>
                 <td class="text-center">
-                    <a class="btn btn-1s btn-info me-1" [routerLink]="['/editDept',d.id]">EDIT</a>
-                    <button class="btn btn-sm btn-danger" (click)="delDept(d.id)">DELETE</button>
+                    <a class="btn btn-sm btn-info me-1" [routerLink]="['edit',d.id]">EDIT</a>
+                    <button class="btn btn-sm btn-danger me-1" (click)="delDept(d.id)">DELETE</button>
+                    <a class="btn btn-sm btn-secondary" [routerLink]="['/emps',d.id]">EMPLOYEES</a>
                 </td>
             </tr>
         </tbody>

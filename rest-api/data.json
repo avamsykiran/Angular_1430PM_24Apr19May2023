@@ -3,28 +3,47 @@
     {
       "id": 1,
       "title": "Accounts",
-      "hq": "Mumbai, India"
+      "hq": "Puna, India"
     },
     {
       "id": 2,
       "title": "HR",
       "hq": "Hyderabad, India"
-    }
-  ],
-  "emps":[
-    {
-      "id":1,
-      "fullName":"Vamsy Kiran Aripaka",
-      "designation":"Sr.Associate",
-      "dateOfJoining":"2023-01-01",
-      "deptId":1
     },
     {
-      "id":2,
-      "fullName":"Rahul Dravid",
-      "designation":"Jr.Associate",
-      "dateOfJoining":"2023-01-02",
-      "deptId":1
+      "id": 3,
+      "title": "Operations",
+      "hq": "Visakhapatnam, India"
+    }
+  ],
+  "emps": [
+    {
+      "id": 1,
+      "fullName": "Vamsy Kiran Aripaka",
+      "designation": "Project Manager",
+      "dateOfJoining": "2023-01-02T00:00:00.000Z",
+      "deptId": 1
+    },
+    {
+      "id": 2,
+      "fullName": "Rahul Dravid",
+      "designation": "Jr.Associate",
+      "dateOfJoining": "2023-01-02",
+      "deptId": 1
+    },
+    {
+      "id": 3,
+      "fullName": "Raghav",
+      "designation": "Associate",
+      "dateOfJoining": "2023-05-02T00:00:00.000Z",
+      "deptId": 2
+    },
+    {
+      "id": 4,
+      "fullName": "Prem Kumar",
+      "designation": "Sr.Associate",
+      "dateOfJoining": "2023-05-17T00:00:00.000Z",
+      "deptId": 1
     }
   ]
 }
